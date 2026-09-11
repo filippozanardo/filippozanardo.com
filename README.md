@@ -19,15 +19,13 @@ Open http://127.0.0.1:8765.
 - `public/site.js`: optional CV availability check.
 - `wrangler.jsonc`: existing Cloudflare Workers Static Assets configuration, serving `public`. Deployment configuration is unchanged; this implementation has not been published.
 
-## Add the real CV and contacts
+## CV and contacts
 
-The contact email `zanardo.filippo@gmail.com` and LinkedIn profile `https://www.linkedin.com/in/filippo-zanardo-43a0299/` and GitHub profile `https://github.com/filippozanardo` were supplied by Filippo. The Feesbee project links to `https://feesbee.com`, supplied by Filippo. No CV is available.
+The English page downloads `public/cv/Filippo_Zanardo_CV.pdf`; the Italian page downloads `public/cv/Filippo_Zanardo_CV_IT.pdf`. Both hero and contact download links use the page language. Keep these filenames when replacing the PDFs, or update the paths in `public/site.js`.
 
-Place the actual CV PDF in `public` and set `cvPath` in `public/site.js` to its absolute site path. Download links appear only after a successful response with the `application/pdf` content type. This avoids exposing a broken link when an asset host returns HTML for a missing file. Without JavaScript, the page remains readable and the optional CV stays hidden.
+Download links appear after a successful response with the `application/pdf` content type, avoiding broken links if an asset host returns HTML for a missing file. Without JavaScript, the optional download links stay hidden.
 
-The contact section and navigation link are always visible and work without JavaScript. Add any further verified contact details to `#contact-actions`; do not add placeholder links.
-
-Project and collaboration names are supplied by the site brief. No additional roles, results, client relationships or metrics have been inferred for the collaborations list.
+Email, LinkedIn, GitHub and the Feesbee URL were supplied by Filippo. The contact section works without JavaScript.
 
 ## Checks
 

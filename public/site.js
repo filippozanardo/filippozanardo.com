@@ -1,7 +1,9 @@
-// Set this to a real PDF within public, e.g. '/filippo-zanardo-cv.pdf'.
+// Select the real CV matching the page language.
 // Never expose a download until the server confirms it is a PDF (Workers
 // can return index.html for a missing path through their SPA fallback).
-const cvPath = null;
+const cvPath = document.documentElement.lang === 'it'
+  ? '/cv/Filippo_Zanardo_CV_IT.pdf'
+  : '/cv/Filippo_Zanardo_CV.pdf';
 
 async function enableCV(path) {
   if (!path) return;
@@ -10,7 +12,7 @@ async function enableCV(path) {
     if (!response.ok || !response.headers.get('content-type')?.includes('application/pdf')) return;
     document.querySelectorAll('[data-cv-link]').forEach((link) => {
       link.href = path;
-      link.setAttribute('download', 'Filippo-Zanardo-CV.pdf');
+      link.setAttribute('download', path.split('/').pop());
       link.hidden = false;
     });
     document.querySelector('#contact').hidden = false;
