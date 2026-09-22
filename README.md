@@ -16,7 +16,7 @@ Open http://127.0.0.1:8765.
 
 - `public/index.html`: content, navigation and metadata.
 - `public/styles.css`: responsive layout, focus states and reduced-motion support.
-- `public/site.js`: optional CV availability check.
+- `public/site.js`: optional CV availability check and selected work index/dialog.
 - `wrangler.jsonc`: existing Cloudflare Workers Static Assets configuration, serving `public`. Deployment configuration is unchanged; this implementation has not been published.
 
 ## CV and contacts
@@ -41,3 +41,7 @@ Browser checks performed in Chrome at 1440, 390 and 320 px: no horizontal overfl
 English remains at `/`; the Italian version is at `/it/`. Both pages share CSS and JavaScript, include an EN / IT navigation and declare canonical and alternate language URLs. Update both HTML files when changing content. Language selection uses ordinary links and works without JavaScript.
 
 The Italian page was also checked visually on desktop and mobile, with browser checks at 1440, 390 and 320 px.
+
+## Selected work
+
+Edit the single `projects` array in `public/site.js` to update both Featured Work and the Project Index. Set `featured: true` for a featured entry and `detail: true` only when it has useful detail content. Each project supports a verified `year`, `technologies`, optional `url`, optional `image` (`src` and EN/IT `alt`), and localized name, type, role, description and work performed. Dated index entries sort newest first; undated entries retain their source order. Missing values and detail actions are omitted from the page.
