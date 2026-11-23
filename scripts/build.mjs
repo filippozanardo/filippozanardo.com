@@ -165,10 +165,13 @@ function contact(lang, copy) {
         <h2 id="contact-title">${c.title}</h2>
         <p class="contact-intro">${c.description}</p>
       </div>
-      <a class="contact-email" id="contact-actions" href="mailto:${email}">
-        <span class="contact-email-action">${escape(c.emailAction)}</span>
-        <span class="contact-email-address">${escape(email)}</span>
-      </a>
+      <div class="contact-links">
+        <a class="contact-email" id="contact-actions" href="mailto:${email}">
+          <span class="contact-email-action">${escape(c.emailAction)}</span>
+          <span class="contact-email-address">${escape(email)}</span>
+        </a>
+        ${link(github, 'GitHub', 'text-link')}
+      </div>
     </div>
   </section>`;
 }

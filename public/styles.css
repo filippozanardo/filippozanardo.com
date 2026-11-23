@@ -228,6 +228,8 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.875rem); letter-spacing: -.02em; font-weig
   text-wrap: balance;
 }
 .contact-intro { color: var(--on-dark); }
+.contact-links { display: grid; gap: .75rem; }
+.contact-links .text-link { justify-self: start; }
 .contact-email {
   display: grid;
   gap: .5rem;
