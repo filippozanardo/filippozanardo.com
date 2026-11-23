@@ -1,5 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://filippozanardo.com/</loc></url>
-  <url><loc>https://filippozanardo.com/it/</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://filippozanardo.com/</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://filippozanardo.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://filippozanardo.com/en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://filippozanardo.com/" />
+  </url>
+  <url>
+    <loc>https://filippozanardo.com/sviluppo-software</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://filippozanardo.com/sviluppo-software" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://filippozanardo.com/en/software-development" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://filippozanardo.com/sviluppo-software" />
+  </url>
+  <url>
+    <loc>https://filippozanardo.com/consulenza-tecnica</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://filippozanardo.com/consulenza-tecnica" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://filippozanardo.com/en/technical-consulting" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://filippozanardo.com/consulenza-tecnica" />
+  </url>
+  <url>
+    <loc>https://filippozanardo.com/collaborazioni-agenzie</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://filippozanardo.com/collaborazioni-agenzie" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://filippozanardo.com/en/agency-collaborations" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://filippozanardo.com/collaborazioni-agenzie" />
+  </url>
+  <url>
+    <loc>https://filippozanardo.com/esperienza</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://filippozanardo.com/esperienza" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://filippozanardo.com/en/experience" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://filippozanardo.com/esperienza" />
+  </url>
+  <url>
+    <loc>https://filippozanardo.com/en</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://filippozanardo.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://filippozanardo.com/en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://filippozanardo.com/" />
+  </url>
+  <url>
+    <loc>https://filippozanardo.com/en/software-development</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://filippozanardo.com/sviluppo-software" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://filippozanardo.com/en/software-development" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://filippozanardo.com/sviluppo-software" />
+  </url>
+  <url>
+    <loc>https://filippozanardo.com/en/technical-consulting</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://filippozanardo.com/consulenza-tecnica" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://filippozanardo.com/en/technical-consulting" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://filippozanardo.com/consulenza-tecnica" />
+  </url>
+  <url>
+    <loc>https://filippozanardo.com/en/agency-collaborations</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://filippozanardo.com/collaborazioni-agenzie" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://filippozanardo.com/en/agency-collaborations" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://filippozanardo.com/collaborazioni-agenzie" />
+  </url>
+  <url>
+    <loc>https://filippozanardo.com/en/experience</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://filippozanardo.com/esperienza" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://filippozanardo.com/en/experience" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://filippozanardo.com/esperienza" />
+  </url>
 </urlset>

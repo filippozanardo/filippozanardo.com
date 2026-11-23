@@ -1,47 +1,44 @@
 # filippozanardo.com
 
-Personal one-page website in English, using semantic HTML, responsive CSS and minimal vanilla JavaScript. No dependencies or build step.
+Sito professionale bilingue in HTML statico e CSS. Cloudflare Workers Static Assets serve la directory `public/`.
 
-## Local preview
+## Build e anteprima locale
 
-From the repository root:
+Dalla radice del repository, con Node.js:
 
 ```sh
-python3 -m http.server 8765 --bind 127.0.0.1 --directory public
+node scripts/build.mjs
+WRANGLER_SEND_METRICS=false npx wrangler dev --local --ip 127.0.0.1 --port 8766
 ```
 
-Open http://127.0.0.1:8765.
+La build genera le dieci pagine HTML e la sitemap in `public/`, senza pacchetti npm. Gli output sono versionati insieme alle sorgenti. Wrangler è lo strumento di anteprima locale e replica sia gli URL senza estensione sia i redirect di produzione.
 
-## Files
+## Contenuti
 
-- `public/index.html`: content, navigation and metadata.
-- `public/styles.css`: responsive layout, focus states and reduced-motion support.
-- `public/site.js`: optional CV availability check and selected work index/dialog.
-- `wrangler.jsonc`: existing Cloudflare Workers Static Assets configuration, serving `public`. Deployment configuration is unchanged; this implementation has not been published.
+- `content/it.mjs` e `content/en.mjs` contengono testi e metadati delle cinque pagine per lingua.
+- `content/projects.json` alimenta i progetti selezionati e l’archivio nella pagina Esperienza. Feesbee è il caso presentato in homepage in entrambe le lingue.
+- `scripts/build.mjs` contiene i percorsi, i template condivisi e la generazione di metadata, dati strutturati e sitemap. Rigenera gli output dopo ogni modifica alle sorgenti.
+- `public/_redirects` contiene i redirect 301 delle vecchie URL italiane. I vecchi frammenti della home sono ancora raggiungibili.
 
-## CV and contacts
+| Italiano | Inglese |
+| --- | --- |
+| `/` | `/en` |
+| `/sviluppo-software` | `/en/software-development` |
+| `/consulenza-tecnica` | `/en/technical-consulting` |
+| `/collaborazioni-agenzie` | `/en/agency-collaborations` |
+| `/esperienza` | `/en/experience` |
+| `/#contatti` | `/en#contact` |
 
-The English page downloads `public/cv/Filippo_Zanardo_CV.pdf`; the Italian page downloads `public/cv/Filippo_Zanardo_CV_IT.pdf`. Both hero and contact download links use the page language. Keep these filenames when replacing the PDFs, or update the paths in `public/site.js`.
+## CV e contatti
 
-Download links appear after a successful response with the `application/pdf` content type, avoiding broken links if an asset host returns HTML for a missing file. Without JavaScript, the optional download links stay hidden.
+I link nella pagina Esperienza scaricano il PDF in lingua da `public/cv/`. La build verifica la presenza e la firma dei due file.
 
-Email, LinkedIn, GitHub and the Feesbee URL were supplied by Filippo. The contact section works without JavaScript.
+La sezione Contatti mostra l’indirizzo email e lo collega al client di posta tramite `mailto:`.
 
-## Checks
+## Controlli
 
 ```sh
-node --check public/site.js
+node --check scripts/build.mjs
+node scripts/build.mjs
 git diff --check
 ```
-
-Browser checks performed in Chrome at 1440, 390 and 320 px: no horizontal overflow, valid section anchors, hidden unavailable CV, working keyboard skip link, reduced-motion scrolling and no JavaScript errors. Desktop and mobile full-page screenshots were visually reviewed.
-
-## Languages
-
-English remains at `/`; the Italian version is at `/it/`. Both pages share CSS and JavaScript, include an EN / IT navigation and declare canonical and alternate language URLs. Update both HTML files when changing content. Language selection uses ordinary links and works without JavaScript.
-
-The Italian page was also checked visually on desktop and mobile, with browser checks at 1440, 390 and 320 px.
-
-## Selected work
-
-Edit the single `projects` array in `public/site.js` to update both Featured Work and the Project Index. Set `featured: true` for a featured entry and `detail: true` only when it has useful detail content. Each project supports a verified `year`, `technologies`, optional `url`, optional `image` (`src` and EN/IT `alt`), and localized name, type, role, description and work performed. Dated index entries sort newest first; undated entries retain their source order. Missing values and detail actions are omitted from the page.
