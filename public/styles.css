@@ -144,7 +144,7 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.875rem); letter-spacing: -.02em; font-weig
 .dark-section .button { background: #f1a08c; border-color: #f1a08c; color: var(--ink); }
 .dark-section .button:hover { background: #ffc3b3; border-color: #ffc3b3; }
 
-.rows, .timeline, .evidence-list, .stack, .project-archive ul { list-style: none; padding: 0; margin: 0; }
+.rows, .timeline, .stack, .project-archive ul { list-style: none; padding: 0; margin: 0; }
 .rows { border-top: 1px solid var(--rule); }
 .rows li {
   display: grid;
@@ -175,15 +175,20 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.875rem); letter-spacing: -.02em; font-weig
 .service-panel.dark-section p:not(.service-question) { color: var(--on-dark); }
 .services { padding-bottom: clamp(2.75rem, 5.5vw, 5rem); }
 
-.split-section, .contact-grid {
+.split-section {
   display: grid;
   grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
   gap: 1.25rem clamp(1.25rem, 5vw, 5rem);
   align-items: start;
 }
 .split-section > h2 { margin: 0; }
-.evidence-list { border-top: 1px solid var(--rule); margin-bottom: 1.25rem; }
-.evidence-list li { border-bottom: 1px solid var(--rule); padding: .8rem 0; font-size: clamp(1rem, 1.65vw, 1.25rem); }
+.evidence-copy {
+  display: grid;
+  justify-items: start;
+  gap: 1rem;
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+}
+.evidence-copy .text-link { margin-top: .25rem; font-size: 1rem; }
 
 .case-study {
   display: grid;
@@ -208,10 +213,38 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.875rem); letter-spacing: -.02em; font-weig
 
 .contact-section { position: relative; }
 .fragment { position: absolute; inset-block-start: 0; }
-.contact-grid { align-items: end; grid-template-columns: repeat(2, minmax(0, 1fr)); padding-block: clamp(2.75rem, 6.5vw, 6.25rem); }
-.contact-grid h2 { margin-block: .75rem 1rem; }
+.contact-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  align-items: center;
+  gap: clamp(1.5rem, 5vw, 5rem);
+  padding-block: clamp(2.5rem, 4.5vw, 4.5rem);
+}
+.contact-grid h2 {
+  max-width: 24ch;
+  margin-block: .75rem 1rem;
+  font-size: clamp(2rem, 3.65vw, 3.5rem);
+  text-wrap: balance;
+}
 .contact-intro { color: var(--on-dark); }
-.contact-email { font-size: clamp(1.0625rem, 2.2vw, 1.875rem); overflow-wrap: anywhere; }
+.contact-email {
+  display: grid;
+  gap: .5rem;
+  padding: clamp(1.125rem, 3vw, 2.5rem);
+  border: 1px solid var(--rule);
+  border-inline-start: .2rem solid #f1a08c;
+  background: #242421;
+  text-decoration: none;
+  transition: background-color .16s ease;
+}
+.contact-email:hover { background: #302c29; color: var(--paper); }
+.contact-email-action { color: #f1a08c; font-size: .875rem; font-weight: 650; }
+.contact-email-address {
+  font-size: clamp(1.0625rem, 2.2vw, 1.875rem);
+  font-weight: 650;
+  overflow-wrap: anywhere;
+  text-decoration: underline;
+}
 
 .subhero { padding-block: clamp(2.75rem, 6vw, 6rem); }
 .subhero h1 { max-width: 19ch; }
@@ -267,5 +300,5 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.875rem); letter-spacing: -.02em; font-weig
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .button { transition: none; }
+  .button, .contact-email { transition: none; }
 }
