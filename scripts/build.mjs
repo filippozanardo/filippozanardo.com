@@ -160,9 +160,10 @@ function contact(lang, copy) {
         <h2 id="contact-title">${c.title}</h2>
         <p class="contact-intro">${c.description}</p>
       </div>
-      <div id="contact-actions">
-        ${link('mailto:' + email, email, 'text-link contact-email')}
-      </div>
+      <a class="contact-email" id="contact-actions" href="mailto:${email}">
+        <span class="contact-email-action">${escape(c.emailAction)}</span>
+        <span class="contact-email-address">${escape(email)}</span>
+      </a>
     </div>
   </section>`;
 }
@@ -210,8 +211,8 @@ function home(lang, copy) {
   <section id="about" class="dark-section">
     <div class="wrap section split-section evidence">
       <h2>${c.evidenceTitle}</h2>
-      <div>
-        <ul class="evidence-list" role="list">${c.evidence.map(fact => `<li>${fact}</li>`).join('')}</ul>
+      <div class="evidence-copy">
+        ${c.evidence.map(paragraph => `<p>${escape(paragraph)}</p>`).join('\n        ')}
         ${link(urls[4], c.experience, 'text-link')}
       </div>
     </div>

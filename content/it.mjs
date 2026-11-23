@@ -33,7 +33,10 @@ export default {
       ['Capire dove intervenire prima', 'Analizzo il codice e l’architettura, documento i problemi e propongo un ordine di intervento.'],
     ],
     evidenceTitle: 'Perché lavorare con me',
-    evidence: ['Sviluppo software professionalmente dal 2000.', 'Prendo decisioni tecniche e implemento direttamente le soluzioni.', 'Ho lavorato su applicazioni aziendali e prodotti SaaS in produzione.', 'Porto avanti attività in autonomia e mi integro in team esistenti.'],
+    evidence: [
+      'Prima di scrivere codice mi piace parlare con chi usa il software ogni giorno. È il modo più diretto per capire dove intervenire. Poi ragiono con il team sulle scelte tecniche e mi occupo dello sviluppo in prima persona.',
+      'Sviluppo software dal 2000 e ho lavorato su gestionali e prodotti SaaS in produzione. Mi inserisco volentieri nel modo di lavorare del tuo team e, se serve, posso prendere in carico una parte del progetto in autonomia.',
+    ],
     caseLabel: 'Caso selezionato',
   },
   development: {
@@ -95,7 +98,7 @@ export default {
     title: 'Esperienza e CV | Filippo Zanardo',
     description: 'Profilo, competenze, incarichi e progetti selezionati di Filippo Zanardo, sviluppatore senior full stack specializzato in PHP e Laravel. CV in italiano e contatti professionali.',
     h1: 'Esperienza e CV.',
-    intro: 'Sviluppo software dal 2000. Ho lavorato come sviluppatore, sistemista, imprenditore, technical lead e CTO. Oggi mi occupo di architettura e sviluppo diretto, soprattutto su PHP, Laravel e WordPress.',
+    intro: 'Sviluppo software dal 2000. Ho lavorato come sviluppatore, sistemista, imprenditore, technical lead e CTO. Oggi mi occupo di architettura e sviluppo diretto, soprattutto su PHP, Laravel e WordPress. Integro strumenti di AI nel mio lavoro quotidiano e mi assumo la responsabilità di ciò che rilascio.',
     availability: 'Valuto posizioni da dipendente e collaborazioni professionali, anche continuative.',
     download: 'Scarica il CV in italiano (PDF)',
     rolesTitle: 'Ruoli ed esperienze',
@@ -112,6 +115,7 @@ export default {
       ['CMS ed e-commerce', 'WordPress, WooCommerce, temi e plugin su misura'],
       ['Interfacce', 'JavaScript, Livewire, Alpine.js, Tailwind CSS, Vue, React'],
       ['Integrazioni e infrastruttura', 'API REST, Stripe, Git, Docker, Linux, Cloudflare'],
+      ['Sviluppo assistito dall’AI', 'Esplorazione di soluzioni e prototipazione con l’AI, revisione e verifica del codice prima del rilascio.'],
     ],
     projectsTitle: 'Progetti selezionati',
     archiveTitle: 'Altri progetti e collaborazioni',
@@ -127,6 +131,7 @@ export default {
     visit: 'Visita Feesbee',
   },
   contact: {
+    emailAction: 'Scrivimi via email',
     title: 'Hai un progetto, un problema tecnico o una proposta di collaborazione?',
     description: 'Raccontami cosa stai cercando. Possiamo capire insieme se posso esserti utile come consulente, sviluppatore esterno o membro del tuo team.',
   },
