@@ -127,12 +127,17 @@ function layout(lang, copy, index, content) {
 }
 
 function rows(items, className = 'rows') {
-  return `<ul class="${className}" role="list">${items.map(([title, description, action]) => `
+  return `<ul class="${className}" role="list">${items.map(([title, description, action]) => {
+    const body = Array.isArray(description)
+      ? `<div>${description.map(paragraph => `<p>${escape(paragraph)}</p>`).join('')}</div>`
+      : `<p>${escape(description)}</p>`;
+    return `
       <li>
         <h3>${escape(title)}</h3>
-        <p>${escape(description)}</p>
+        ${body}
         ${action ?? ''}
-      </li>`).join('')}
+      </li>`;
+  }).join('')}
     </ul>`;
 }
 
@@ -260,6 +265,7 @@ function experience(lang, copy) {
     <p class="lead">${page.intro}</p>
     <div class="actions">
       <a class="button" href="/cv/${cvFiles[lang]}" download>${page.download}</a>
+      ${link(github, 'GitHub', 'text-link')}
       ${link(linkedin, 'LinkedIn', 'text-link')}
     </div>
     <p class="availability">${page.availability}</p>
